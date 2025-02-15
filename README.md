@@ -81,7 +81,13 @@ Follow the android build instructions [here.](./dependencies/android/README.md)
 
 ### Compiling
 
-Compiling is as simple as typing the following in the root repository directory:
+In Command Prompt, use the "cd" command to change your directory like so. Remebemer to replace "[C:/Users/Fawkes/Github/New_Sonic_CD_R_Decompkication]" with the filepath to the source code you downloaded earlier.
+```
+cd [C:/Users/Fawkes/Github/New_Sonic_CD_R_Decompkication]
+```
+
+
+Compiling is as simple as typing the following in the root repository directory. Make sure to run these commands one after the other, not together, or it wont work!:
 ```
 cmake -B build
 cmake --build build --config release
