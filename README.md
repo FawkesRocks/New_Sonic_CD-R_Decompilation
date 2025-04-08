@@ -51,7 +51,7 @@ This project uses [CMake](https://cmake.org/), a versatile building system that 
 In order to clone the repository, you need to install Git, which you can get [here](https://git-scm.com/downloads).
 
 Clone the repo **recursively**, using:
-`git clone --recursive https://github.com/Rubberduckycooly/Sonic-CD-11-Decompilation`
+`git clone --recursive https://github.com/FawkesRocks/New_Sonic_CD-R_Decompilation`
 
 If you've already cloned the repo, run this command inside of the repository:
 ```git submodule update --init --recursive```
@@ -59,7 +59,7 @@ If you've already cloned the repo, run this command inside of the repository:
 ## Follow the build steps
 
 ### Windows
-To handle dependencies, you'll need to install [Visual Studio Community](https://visualstudio.microsoft.com/downloads/) (make sure to install the `Desktop development with C++` package during the installation) and [vcpkg](https://github.com/microsoft/vcpkg#quick-start-windows).
+To handle dependencies, you'll need to install [Visual Studio Community](https://visualstudio.microsoft.com/downloads/) (make sure to install the `Desktop development with C++` package during the installation) and [vcpkg](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started) (only up to the substeps seen in step 1. 
 
 After installing those, run the following in Command Prompt (make sure to replace `[vcpkg root]` with the path to the vcpkg installation!):
 - `[vcpkg root]\vcpkg.exe install glew sdl2 libogg libtheora libvorbis --triplet=x64-windows-static` (If you're compiling a 32-bit build, replace `x64-windows-static` with `x86-windows-static`.)
@@ -74,20 +74,20 @@ Install the following dependencies: then follow the [compilation steps below](#c
 - **apt (Debian/Ubuntu):** `sudo apt install build-essential cmake libglew-dev libglfw3-dev libsdl2-dev libogg-dev libtheora-dev libvorbis-dev`
 - **rpm (Fedora):** `sudo dnf install make gcc cmake glew-devel glfw-devel sdl2-devel libogg-devel libtheora-devel libvorbis-devel zlib-devel`
 - **apk (Alpine/PostmarketOS)** `sudo apk add build-base cmake glew-dev glfw-dev sdl2-dev libogg-dev libtheora-dev libvorbis-dev`
-- Your favorite package manager here, [make a pull request](https://github.com/Rubberduckycooly/Sonic-CD-11-Decompilation/fork)
+- Your favorite package manager here, [make a pull request](https://github.com/FawkesRocks/New_Sonic_CD-R_Decompilation/fork)
 
 ## Android
 Follow the android build instructions [here.](./dependencies/android/README.md)
 
 ### Compiling
 
-In Command Prompt, use the "cd" command to change your directory like so. Remebemer to replace "[C:/Users/Fawkes/Github/New_Sonic_CD_R_Decompkication]" with the filepath to the source code you downloaded earlier.
+In Command Prompt, use the "cd" command to change your directory like so. Remember to replace "[C:/Users/Fawkes/Github/New_Sonic_CD-R_Decompilation]" with the filepath to the source code you downloaded earlier.
 ```
-cd [C:/Users/Fawkes/Github/New_Sonic_CD_R_Decompkication]
+cd [C:/Users/Fawkes/Github/New_Sonic_CD-R_Decompilation]
 ```
 
 
-Compiling is as simple as typing the following in the root repository directory. Make sure to run these commands one after the other, not together, or it wont work!:
+Compiling is as simple as typing the following in the root repository directory. Make sure to run these two commands one after another, otherwise the decompilation won't build:
 ```
 cmake -B build
 cmake --build build --config release
@@ -108,6 +108,8 @@ The following cmake arguments are available when compiling:
 
 ## Unofficial Branches
 Follow the installation instructions in the readme of each branch.
+
+**Non Restored:**
 * For the **Nintendo Switch**, go to [heyjoeway's fork](https://github.com/heyjoeway/Sonic-CD-11-Decompilation).
 * For the **Nintendo 3DS**, go to [SaturnSH2x2's fork](https://github.com/SaturnSH2x2/Sonic-CD-11-3DS).
   * A New Nintendo 3DS is required for the game to run smoothly.
