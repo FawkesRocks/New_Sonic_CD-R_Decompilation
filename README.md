@@ -77,6 +77,8 @@ Install the following dependencies: then follow the [compilation steps below](#c
 - Your favorite package manager here, [make a pull request](https://github.com/FawkesRocks/New_Sonic_CD-R_Decompilation/fork)
 
 ## Android
+> [!WARNING]
+Building for this platform is unsupported and probably won't function correctly anyway.
 Follow the android build instructions [here.](./dependencies/android/README.md)
 
 ### Compiling
@@ -96,7 +98,8 @@ cmake --build build --config release
 The resulting build will be located somewhere in `build/` depending on your system.
 
 > [!NOTE]
-You can use these arguments on the `cmake -B build` command like so: `cmake -B build -DRETRO_DISABLE_PLUS=on`
+You can use these arguments on the `cmake -B build` command like so:
+`cmake -B build -DRETRO_DISABLE_PLUS=on`
 
 The following cmake arguments are available when compiling:
 - `RETRO_DISABLE_PLUS`: Whether or not to disable the Plus DLC. Takes a boolean (on/off): build with `on` when compiling for distribution. Defaults to `off`.
