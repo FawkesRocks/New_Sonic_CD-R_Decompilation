@@ -79,6 +79,7 @@ Install the following dependencies: then follow the [compilation steps below](#c
 ## Android
 > [!WARNING]
 Building for this platform is unsupported and probably won't function correctly anyway.
+
 Follow the android build instructions [here.](./dependencies/android/README.md)
 
 ### Compiling
