@@ -1,4 +1,4 @@
-name: Build RSDKv3
+name: Build Sonic CD Restored
 on:
   push:
     branches:
@@ -78,7 +78,7 @@ jobs:
       - name: Move artifacts
         run: |
           mkdir artifacts
-          mv ./build/RSDKv3* ./artifacts
+          mv ./build/"Sonic CD Restored"* ./artifacts
           tar -czvf linux.tar.gz -C ./artifacts .
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
