@@ -95,9 +95,10 @@ cmake --build build --config release
 
 The resulting build will be located somewhere in `build/` depending on your system.
 
-The following cmake arguments are available when compiling:
+> [!NOTE]
+You can use these arguments on the `cmake -B build` command like so: `cmake -B build -DRETRO_DISABLE_PLUS=on`
 
-### RSDKv3 flags
+The following cmake arguments are available when compiling:
 - `RETRO_DISABLE_PLUS`: Whether or not to disable the Plus DLC. Takes a boolean (on/off): build with `on` when compiling for distribution. Defaults to `off`.
 - `RETRO_FORCE_CASE_INSENSITIVE`: Forces case insensivity when loading files. Takes a boolean, defaults to `off`.
 - `RETRO_MOD_LOADER`: Enables or disables the mod loader. Takes a boolean, defaults to `on`.
@@ -105,7 +106,6 @@ The following cmake arguments are available when compiling:
 - `RETRO_ORIGINAL_CODE`: Removes any custom code. *A playable game will not be built with this enabled.* Takes a boolean, defaults to `off`.
 - `RETRO_SDL_VERSION`: *Only change this if you know what you're doing.* Switches between using SDL1 or SDL2. Takes an integer of either `1` or `2`, defaults to `2`.
 
-- Use these on the first `cmake -B build` step like so: `cmake -B build -DRETRO_DISABLE_PLUS=on`
 
 ## Unofficial Branches
 Follow the installation instructions in the readme of each branch.
