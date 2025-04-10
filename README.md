@@ -51,7 +51,7 @@ This project uses [CMake](https://cmake.org/), a versatile building system that 
 In order to clone the repository, you need to install Git, which you can get [here](https://git-scm.com/downloads).
 
 Clone the repo **recursively**, using:
-`git clone --recursive https://github.com/Rubberduckycooly/Sonic-CD-11-Decompilation`
+`git clone --recursive https://github.com/FawkesRocks/New_Sonic_CD-R_Decompilation`
 
 If you've already cloned the repo, run this command inside of the repository:
 ```git submodule update --init --recursive```
@@ -59,7 +59,7 @@ If you've already cloned the repo, run this command inside of the repository:
 ## Follow the build steps
 
 ### Windows
-To handle dependencies, you'll need to install [Visual Studio Community](https://visualstudio.microsoft.com/downloads/) (make sure to install the `Desktop development with C++` package during the installation) and [vcpkg](https://github.com/microsoft/vcpkg#quick-start-windows).
+To handle dependencies, you'll need to install [Visual Studio Community](https://visualstudio.microsoft.com/downloads/) (make sure to install the `Desktop development with C++` package during the installation) and [vcpkg](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started) (only up to the substeps seen in step 1). 
 
 After installing those, run the following in Command Prompt (make sure to replace `[vcpkg root]` with the path to the vcpkg installation!):
 - `[vcpkg root]\vcpkg.exe install glew sdl2 libogg libtheora libvorbis --triplet=x64-windows-static` (If you're compiling a 32-bit build, replace `x64-windows-static` with `x86-windows-static`.)
@@ -74,20 +74,23 @@ Install the following dependencies: then follow the [compilation steps below](#c
 - **apt (Debian/Ubuntu):** `sudo apt install build-essential cmake libglew-dev libglfw3-dev libsdl2-dev libogg-dev libtheora-dev libvorbis-dev`
 - **rpm (Fedora):** `sudo dnf install make gcc cmake glew-devel glfw-devel sdl2-devel libogg-devel libtheora-devel libvorbis-devel zlib-devel`
 - **apk (Alpine/PostmarketOS)** `sudo apk add build-base cmake glew-dev glfw-dev sdl2-dev libogg-dev libtheora-dev libvorbis-dev`
-- Your favorite package manager here, [make a pull request](https://github.com/Rubberduckycooly/Sonic-CD-11-Decompilation/fork)
+- Your favorite package manager here, [make a pull request](https://github.com/FawkesRocks/New_Sonic_CD-R_Decompilation/fork)
 
 ## Android
+> [!WARNING]
+Building for this platform is unsupported and probably won't function correctly anyway.
+
 Follow the android build instructions [here.](./dependencies/android/README.md)
 
 ### Compiling
 
-In Command Prompt, use the "cd" command to change your directory like so. Remebemer to replace "[C:/Users/Fawkes/Github/New_Sonic_CD_R_Decompkication]" with the filepath to the source code you downloaded earlier.
+In Command Prompt, use the "cd" command to change your directory like so. Remember to replace "[C:/Users/Fawkes/Github/New_Sonic_CD-R_Decompilation]" with the filepath to the source code you downloaded earlier.
 ```
-cd [C:/Users/Fawkes/Github/New_Sonic_CD_R_Decompkication]
+cd [C:/Users/Fawkes/Github/New_Sonic_CD-R_Decompilation]
 ```
 
 
-Compiling is as simple as typing the following in the root repository directory. Make sure to run these commands one after the other, not together, or it wont work!:
+Compiling is as simple as typing the following in the root repository directory. Make sure to run these two commands one after another, otherwise the decompilation won't build:
 ```
 cmake -B build
 cmake --build build --config release
@@ -95,10 +98,11 @@ cmake --build build --config release
 
 The resulting build will be located somewhere in `build/` depending on your system.
 
-The following cmake arguments are available when compiling:
-- Use these on the first `cmake -B build` step like so: `cmake -B build -DRETRO_DISABLE_PLUS=on`
+> [!NOTE]
+You can use these arguments on the `cmake -B build` command like so:
+`cmake -B build -DRETRO_DISABLE_PLUS=on`
 
-### RSDKv3 flags
+The following cmake arguments are available when compiling:
 - `RETRO_DISABLE_PLUS`: Whether or not to disable the Plus DLC. Takes a boolean (on/off): build with `on` when compiling for distribution. Defaults to `off`.
 - `RETRO_FORCE_CASE_INSENSITIVE`: Forces case insensivity when loading files. Takes a boolean, defaults to `off`.
 - `RETRO_MOD_LOADER`: Enables or disables the mod loader. Takes a boolean, defaults to `on`.
@@ -106,8 +110,11 @@ The following cmake arguments are available when compiling:
 - `RETRO_ORIGINAL_CODE`: Removes any custom code. *A playable game will not be built with this enabled.* Takes a boolean, defaults to `off`.
 - `RETRO_SDL_VERSION`: *Only change this if you know what you're doing.* Switches between using SDL1 or SDL2. Takes an integer of either `1` or `2`, defaults to `2`.
 
+
 ## Unofficial Branches
 Follow the installation instructions in the readme of each branch.
+
+**Non Restored:**
 * For the **Nintendo Switch**, go to [heyjoeway's fork](https://github.com/heyjoeway/Sonic-CD-11-Decompilation).
 * For the **Nintendo 3DS**, go to [SaturnSH2x2's fork](https://github.com/SaturnSH2x2/Sonic-CD-11-3DS).
   * A New Nintendo 3DS is required for the game to run smoothly.

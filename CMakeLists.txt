@@ -16,7 +16,7 @@ if(RETRO_ORIGINAL_CODE)
     set(RETRO_MOD_LOADER OFF)
 endif()
 
-set(RETRO_NAME "RSDKv3")
+set(RETRO_NAME "Sonic CD Restored")
 
 set(RETRO_OUTPUT_NAME ${RETRO_NAME} CACHE STRING "The exported name of the executable.")
 
